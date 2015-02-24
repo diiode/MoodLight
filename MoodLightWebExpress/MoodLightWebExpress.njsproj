@@ -31,15 +31,26 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="public\javascripts\bootstrap-switch.js" />
+    <Compile Include="public\javascripts\bootstrap-switch.min.js" />
+    <Compile Include="public\javascripts\jasny-bootstrap.js" />
+    <Compile Include="public\javascripts\jasny-bootstrap.min.js" />
+    <Compile Include="public\javascripts\site.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />
     <Compile Include="bin\www" />
     <Content Include="package.json" />
+    <Content Include="public\stylesheets\bootstrap-switch.css" />
+    <Content Include="public\stylesheets\bootstrap-switch.min.css" />
+    <Content Include="public\stylesheets\jasny-bootstrap.css" />
+    <Content Include="public\stylesheets\jasny-bootstrap.css.map" />
+    <Content Include="public\stylesheets\jasny-bootstrap.min.css" />
     <Content Include="public\stylesheets\style.styl" />
     <Content Include="README.md" />
     <Content Include="views\index.jade" />
     <Content Include="views\layout.jade" />
     <Content Include="views\error.jade" />
+    <Content Include="views\_menu.jade" />
     <Content Include="views\_navbar.jade" />
   </ItemGroup>
   <ItemGroup>
