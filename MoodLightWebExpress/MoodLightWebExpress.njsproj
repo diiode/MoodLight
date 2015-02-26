@@ -34,8 +34,10 @@
     <Compile Include="app.js" />
     <Compile Include="public\javascripts\bootstrap-switch.js" />
     <Compile Include="public\javascripts\bootstrap-switch.min.js" />
+    <Compile Include="public\javascripts\colorwheel.js" />
     <Compile Include="public\javascripts\jasny-bootstrap.js" />
     <Compile Include="public\javascripts\jasny-bootstrap.min.js" />
+    <Compile Include="public\javascripts\raphael-min.js" />
     <Compile Include="public\javascripts\site.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="routes\users.js" />

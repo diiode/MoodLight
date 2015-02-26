@@ -42,3 +42,4 @@ $("[name='power-toggle']").on('switchChange.bootstrapSwitch', function (event, s
 });
 
 
+Raphael.colorwheel($("#main-color-wheel-container")[0], 300, 180).color("#00F");
