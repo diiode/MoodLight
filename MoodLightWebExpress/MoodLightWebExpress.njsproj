@@ -30,6 +30,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="api\powerRouter.js" />
     <Compile Include="app.js" />
     <Compile Include="public\javascripts\bootstrap-switch.js" />
     <Compile Include="public\javascripts\bootstrap-switch.min.js" />
@@ -55,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
+    <Folder Include="model\" />
+    <Folder Include="api\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />
