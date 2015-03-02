@@ -17,6 +17,12 @@ var app = express();
 // Model
 app.locals.power = {
     power: false
+}
+
+app.locals.hsl = {
+    hue: 0.7,
+    sat: 1,
+    lum: 0.5
 };
 
 // view engine setup

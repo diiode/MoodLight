@@ -30,6 +30,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="api\hslRouter.js" />
     <Compile Include="api\powerRouter.js" />
     <Compile Include="app.js" />
     <Compile Include="public\javascripts\bootstrap-switch.js" />
