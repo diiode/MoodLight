@@ -44,8 +44,9 @@ $("[name='power-toggle']").on('switchChange.bootstrapSwitch', function (event, s
 var cw = Raphael.colorwheel($("#main-color-wheel-container")[0], 300, 180).color("#F00");
 cw.onchange(function (color){
     var colorHsl = Raphael.rgb2hsl(color.r, color.g, color.b);
-    var hslText = "H: " + colorHsl.h + ", S: " + colorHsl.s + ", L: " + colorHsl.l;
+    var hslText = "H: " + colorHsl.h.toFixed(3) + ", S: " + colorHsl.s.toPrecision(2) + ", L: " + colorHsl.l.toPrecision(2);
     $("#hsl-value").text(hslText);
+    $(".info-display")
     $.ajax({
         url: "/hsl",
         type: "POST",
