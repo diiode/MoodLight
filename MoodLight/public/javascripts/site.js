@@ -25,7 +25,7 @@ function updatePowerToggle(data) {
 
 
 $("[name='power-toggle']").on('switchChange.bootstrapSwitch', function (event, state) {
-    console.debug("State change: " + state);
+    //console.debug("State change: " + state);
     powerState = state;
     powerDisabled = true;
     powerToggle.bootstrapSwitch('disabled', powerDisabled);
@@ -46,7 +46,10 @@ cw.onchange(function (color){
     var colorHsl = Raphael.rgb2hsl(color.r, color.g, color.b);
     var hslText = "H: " + colorHsl.h.toFixed(3) + ", S: " + colorHsl.s.toPrecision(2) + ", L: " + colorHsl.l.toPrecision(2);
     $("#hsl-value").text(hslText);
-    $(".info-display")
+    $(".info-display").css("background-color", "rgb(" + 
+        Math.floor(color.r) + ", " + 
+        Math.floor(color.g) + ", " + 
+        Math.floor(color.b) + ")");
     $.ajax({
         url: "/hsl",
         type: "POST",
@@ -54,14 +57,14 @@ cw.onchange(function (color){
         contentType: "application/json; charset=utf-8",
         dataType: "json"
     })
-    console.debug(color);
+    //console.debug(color);
 });
 
 // Get state of power
 $.ajax({
     url: "/power",
 }).done(function (data) {
-    console.debug("Current power state: " + data.power);
+    //console.debug("Current power state: " + data.power);
     updatePowerToggle(data.power);
 });
 
@@ -69,7 +72,7 @@ $.ajax({
 $.ajax({
     url: "/hsl",
 }).done(function (data) {
-    console.debug(data);
+    //console.debug(data);
     var hexColor = Raphael.hsl(data.hue, data.sat, data.lum);
     cw.color(hexColor);
 })
