@@ -46,10 +46,11 @@ cw.onchange(function (color){
     var colorHsl = Raphael.rgb2hsl(color.r, color.g, color.b);
     var hslText = "H: " + colorHsl.h.toFixed(3) + ", S: " + colorHsl.s.toPrecision(2) + ", L: " + colorHsl.l.toPrecision(2);
     $("#hsl-value").text(hslText);
-    $(".info-display").css("background-color", "rgb(" + 
+    $(".info-display").css("background-color", "rgba(" + 
         Math.floor(color.r) + ", " + 
         Math.floor(color.g) + ", " + 
-        Math.floor(color.b) + ")");
+        Math.floor(color.b) + ", " +
+        "0.75)");
     $.ajax({
         url: "/hsl",
         type: "POST",
@@ -74,5 +75,13 @@ $.ajax({
 }).done(function (data) {
     //console.debug(data);
     var hexColor = Raphael.hsl(data.hue, data.sat, data.lum);
+    var rgbColor = Raphael.hsl2rgb(data.hue, data.sat, data.lum);
     cw.color(hexColor);
+    var hslText = "H: " + data.hue.toFixed(3) + ", S: " + data.sat.toPrecision(2) + ", L: " + data.lum.toPrecision(2);
+    $("#hsl-value").text(hslText);
+    $(".info-display").css("background-color", "rgba(" + 
+        Math.floor(rgbColor.r) + ", " + 
+        Math.floor(rgbColor.g) + ", " + 
+        Math.floor(rgbColor.b) + ", " +
+        "0.75)");
 })
